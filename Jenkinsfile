@@ -3,11 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/jatin1410/aceest-gym-devops.git'
-            }
-        }
+    stage('Clone Repository') {
+    steps {
+        git branch: 'main', url: 'https://github.com/jatin1410/aceest-gym-devops.git'
+    }
+}
 
         stage('Install Dependencies') {
             steps {
