@@ -28,6 +28,7 @@ This simple structure allows automated testing and CI/CD pipeline integration.
 
 ## Project Structure
 
+```
 aceest-gym-devops
 │
 ├── app.py
@@ -49,6 +50,7 @@ aceest-gym-devops
 └── .github
     └── workflows
         └── main.yml
+```
 
 ### File Description:
     1. app.py	                    Flask web application
@@ -60,17 +62,23 @@ aceest-gym-devops
 
 ## Running the Flask Application
 1. Clone the Repository
+```bash
     git clone https://github.com/jatin1410/aceest-gym-devops.git
     cd aceest-gym-devops
+```
 2. Install Dependencies
+```bash
     pip install -r requirements.txt
+```
     After installing dependencies, the Flask application can be started locally.
 3. Run the Flask Application
+```bash
     python app.py
-
+```
 The application will start at:
+```
     http://localhost:5000
-
+```
 Example execution output:
 
 ![Flask Application Running](images/flask-running.png)
@@ -86,25 +94,27 @@ Below is an example of running the test suite locally:
 
 ![Pytest Execution](images/pytest-output.jpg)
 
-## Docker Containerization:
+## Docker Containerization
 
 The application is containerized using Docker to ensure consistent runtime environments.
 
 ### Docker Image Build
 
-Build Docker Image
-    docker build -t aceest-gym-app .
-Run Docker Container
-    docker run -p 5000:5000 aceest-gym-app
-
-The application is containerized using Docker to ensure a consistent runtime environment.
-
+```bash
+docker build -t aceest-gym-app . 
+```
+### Run Docker Container
+```bash
+    docker run -p 5000:5000 aceest-gym-app 
+```
 The following screenshot shows the Docker image successfully built for the application.
 
 ![Docker Image Build](images/docker-build.png)
 
 The API will be available at:
+```text
     http://localhost:5000
+```
 
 ## Continuous Integration – GitHub Actions
 
@@ -153,6 +163,7 @@ The pipeline configuration is defined in Jenkinsfile. This file allows Jenkins t
 
 The overall DevOps workflow is illustrated below:
 
+```
 Developer
    │
    ▼
@@ -170,6 +181,7 @@ Jenkins Build Server
    │
    ├── Validate Build
    └── Build Docker Image
+```
 
 This automated pipeline improves development efficiency by ensuring code quality and build consistency.
 
@@ -188,7 +200,9 @@ This project demonstrates how DevOps practices can be applied to automate the so
 
 The implemented workflow reflects common industry practices for modern software delivery.
 
-## Author:
-Jatin Upadhyay(2024tm93717)
-M.Tech – Software Engineering
+## Author
+
+**Jatin Upadhyay** <br>
+**2024tm93717** <br>
+M.Tech – Software Engineering <br>
 DevOps Assignment – ACEest Fitness & Gym CI/CD Pipeline
