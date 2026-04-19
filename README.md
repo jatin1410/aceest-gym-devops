@@ -36,9 +36,6 @@ The simplicity of the application allows it to be effectively used for demonstra
 ## Project Structure
 
 ```
-## Project Structure
-
-```
 aceest-gym-devops
 │
 ├── app.py
@@ -66,8 +63,6 @@ aceest-gym-devops
 └── .github
     └── workflows
         └── main.yml
-```
-
 ```
 
 ### File Description:
@@ -237,7 +232,6 @@ Access the application using:
 minikube service aceest-gym-service
 ```
 
-```markdown
 ## Deployment Strategies
 
 The following deployment strategies are demonstrated:
