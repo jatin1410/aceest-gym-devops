@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    tools {
+        sonarQubeScanner 'SonarScanner'
+    }
+
+    environment {
+        SONAR_AUTH_TOKEN = credentials('sonar-token')
+    }
+
     stages {
 
         stage('Install Dependencies') {
@@ -12,6 +20,20 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'python3 -m pytest'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh '''
+                    sonar-scanner \
+                    -Dsonar.projectKey=aceest-gym \
+                    -Dsonar.sources=. \
+                    -Dsonar.host.url=http://host.docker.internal:9000 \
+                    -Dsonar.login=$SONAR_AUTH_TOKEN
+                    '''
+                }
             }
         }
 
